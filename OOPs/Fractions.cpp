@@ -7,6 +7,7 @@ private:
     int numerator;
     int denominator;
 public:
+
     Fraction(int numerator, int denominator){
         this->numerator = numerator;
         this->denominator = denominator; 
@@ -37,6 +38,38 @@ public:
 
         simplify();
     }
+
+    void multiply(Fraction f){
+        int num = this->numerator * f.numerator;
+        int deno = this->denominator * f.denominator;
+
+        this->numerator = num;
+        this->denominator = deno;
+
+        simplify();
+    }
+
+    Fraction operator+ (Fraction const &f){
+
+        int num = this->numerator * (f.denominator) + f.numerator * (this->denominator);
+        int deno = this->denominator * f.denominator;
+
+        Fraction f3(num, deno);
+        f3.simplify();
+
+        return f3;
+    }
+
+    Fraction operator* (Fraction const &f){
+
+        int num = this->numerator * f.numerator;
+        int deno = this->denominator * f.denominator;
+
+        Fraction f3(num, deno);
+        f3.simplify();
+        return f3;
+    }
+
 };
 
 
