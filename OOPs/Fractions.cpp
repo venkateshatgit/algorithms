@@ -70,6 +70,33 @@ public:
         return f3;
     }
 
+    Fraction& operator++ (){
+
+        this->numerator = this->numerator + this->denominator;
+        simplify();
+        return *this;
+    }
+
+    Fraction operator++(int){
+
+        Fraction f(this->numerator, this->denominator);
+        f.simplify();
+
+        this->numerator = this->numerator + this->denominator;
+        simplify();
+
+        return f;
+    }
+
+    Fraction& operator+=(Fraction  const &f){
+
+        this->numerator = this->numerator*f.denominator + this->denominator * f.numerator;
+        this->denominator = this->denominator*f.denominator;
+        simplify();
+
+        return *this;
+    }
+
 };
 
 
