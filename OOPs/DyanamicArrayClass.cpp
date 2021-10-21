@@ -11,7 +11,6 @@ public:
         nextIndex=0;
         capacity=5;
         data = new int[capacity];
-        cout<<"HI"<<endl;
     }
 
     DyanamicArray(DyanamicArray const &d){
@@ -26,7 +25,7 @@ public:
 
     }
     
-    int* doubleArray(int* data, int capacity){
+    int* doubleArray(int* data, int capacity) {
 
         int* newArray = new int[2*capacity];
         for(int i=0; i<capacity; ++i){
@@ -62,7 +61,7 @@ public:
 
     }
 
-    void printArray(){
+    void printArray() const{
         
         cout<<"capacity: "<<capacity<<endl;
         for(int i=0; i<nextIndex; ++i)
@@ -71,7 +70,7 @@ public:
 
     }
 
-    int get(int index){
+    int get(int index) const{
         if(index>=nextIndex || index<0)
             return -1;
         
