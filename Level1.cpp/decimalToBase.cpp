@@ -69,6 +69,37 @@ int subtractNumber(int n, int m, int base){
     return sum;
 }
 
+int multiply(int nn, int mn, int base){
+
+    int result=0, multi2=1;
+    
+
+    while(mn>0){
+
+        int m=mn%10;
+        int sum=0, multi=1, carry=0, product, n=nn;
+        while(n>0 || carry>0){
+
+            product = (n%10)*m+carry;
+            sum = sum + (product % base) * multi;
+            carry = product / base;
+            multi = multi * 10;
+
+            n=n/10;
+
+            
+        }   
+
+        cout<<sum*multi2<<" "<<result<<endl; 
+
+        result=addNumber(sum*multi2, result, base);
+        multi2=multi2*10;
+        mn=mn/10;
+    }
+
+    return result;
+}
+
 int main(){
     // int num, base, convertto;
     // cin>>num>>base>>convertto;
@@ -77,12 +108,17 @@ int main(){
     
     // cout<<numberToconvertto(convertto, number)<<endl;
 
-    int n1, n2, base;
-    cin>>n1>>n2>>base;
+    // int n1, n2, base;
+    // cin>>n1>>n2>>base;
 
-    // cout<<addNumber(n1, n2, base)<<endl;
+    // // cout<<addNumber(n1, n2, base)<<endl;
 
-    cout<<subtractNumber(n1, n2, base)<<endl;
+    // cout<<subtractNumber(n1, n2, base)<<endl;
+
+    int n, m ,base;
+    cin>>n>>m>>base;
+
+    cout<<multiply(n, m, base)<<endl;
 
     return 0;
 }
