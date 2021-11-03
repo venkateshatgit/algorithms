@@ -33,19 +33,6 @@ int main(){
 
     printBarChart(arr, n, height);
 
-/*
-output
-5
-3 1 0 7 5
-        *
-        *
-        *  *
-        *  *
-*        *  *
-*        *  *
-*  *     *  *
-
-*/
     delete [] arr;
     return 0;
 }
