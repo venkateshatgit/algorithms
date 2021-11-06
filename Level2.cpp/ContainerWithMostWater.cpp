@@ -12,7 +12,7 @@ int main(){
     for(int i=0; i<n; ++i){
         for(int j=i+1; j<n; ++j){
 
-            water=min(arr[i], arr[j])*(j-1);
+            water=min(arr[i], arr[j])*(j-i);
             max_water=max(max_water, water);
         }
     }
