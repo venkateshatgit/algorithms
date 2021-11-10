@@ -7,7 +7,7 @@
     <body>
         <h1>JS Array Methods</h1>
         <script>
-            const companies= [
+            const companies = [
             {name: "Company One", category: "Finance", start: 1981, end: 2004},
             {name: "Company Two", category: "Retail", start: 1992, end: 2008},
             {name: "Company Three", category: "Auto", start: 1999, end: 2007},
@@ -21,50 +21,50 @@
 
             const ages = [33, 12, 20, 16, 5, 54, 21, 44, 61, 13, 15, 45, 25, 64, 32];
 
-            // for(let i=0; i<companies.length; ++i){
-            //     console.log(companies[i]);
-            // }
+            for(let i=0; i<companies.length; ++i){
+                console.log(companies[i]);
+            }
 
 
-            // companies.forEach( company => {
-            //     console.log(company);
-            // });
+            companies.forEach( company => {
+                console.log(company);
+            });
 
             //filter ages arrays and get all the ages that are 21 and over
-            // const filterdAges = ages.filter(age =>{
-            //     if(age>=21)
-            //         return true;
-            // });
+            const filterdAges = ages.filter(age =>{
+                if(age>=21)
+                    return true;
+            });
             
-            // const filterdAges = ages.filter(age => age >= 21)
-            // console.log(filterdAges);
+            const filterdAges = ages.filter(age => age >= 21)
+            console.log(filterdAges);
 
             //Filter Retail company
-            // const RetailCompany = companies.filter( company => company.category==="Retail");
-            // console.log(RetailCompany);
+            const RetailCompany = companies.filter( company => company.category==="Retail");
+            console.log(RetailCompany);
 
             // //Get 80s companies
-            // const eightiesCompany = companies.filter( company => (company.start >= 1980 && company.start<= 1989));
-            // console.log(eightiesCompany);
+            const eightiesCompany = companies.filter( company => (company.start >= 1980 && company.start<= 1989));
+            console.log(eightiesCompany);
 
             //Comapnies That lasted 10years;
-            // const lastedTenYears = companies.filter( company => (company.end-company.start)>=10);
-            // console.log(lastedTenYears);
+            const lastedTenYears = companies.filter( company => (company.end-company.start)>=10);
+            console.log(lastedTenYears);
 
 
             //MAP
             //Create array of comapany names
-            // const companyName = companies.map( company =>  `${company.name} [${company.start} - ${company.end}]`);
-            // console.log(companyName);
+            const companyName = companies.map( company =>  `${company.name} [${company.start} - ${company.end}]`);
+            console.log(companyName);
 
-            // const squareAges = ages.map( age => Math.sqrt(age));
-            // console.log(squareAges);
+            const squareAges = ages.map( age => Math.sqrt(age));
+            console.log(squareAges);
 
-            // const ageMap = ages
-            //     .map( age => Math.sqrt(age))
-            //     .map( age => age*2);
+            const ageMap = ages
+                .map( age => Math.sqrt(age))
+                .map( age => age*2);
 
-            // console.log(ageMap);
+            console.log(ageMap);
 
             //Sort according to start date
             const sortedCompanies = companies.sort( (a, b) => a.start > b.start ? 1 : -1);
